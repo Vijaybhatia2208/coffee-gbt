@@ -14,7 +14,10 @@ export type ConversationListItem = {
   updatedAt: Date;
 };
 
-async function assertOwnsConversation(conversationId: string, userId: string) {
+export async function assertOwnsConversation(
+  conversationId: string,
+  userId: string,
+) {
   const conversation = await prisma.conversation.findFirst({
     where: {
       id: conversationId,
