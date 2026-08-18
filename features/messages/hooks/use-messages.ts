@@ -8,7 +8,7 @@ import {
   updateMessage,
   deleteMessage,
 } from "../actions/messages-action";
-import { queryKeys } from "@/features/converstion/utils/query-keys";
+import { queryKeys } from "@/features/conversation/utils/query-keys";
 
 export function useMessages(conversationId: string | undefined) {
   return useQuery({

@@ -3,7 +3,7 @@ import { revalidatePath } from "next/cache";
 import { requireUser } from "@/features/auth/action/require-user";
 import { prisma } from "@/lib/db";
 import type { MessageRole, MessageStatus } from "@/lib/generated/prisma/enums";
-import { assertOwnsConversation } from "@/features/converstion/actions/conversation-actions";
+import { assertOwnsConversation } from "@/features/conversation/actions/conversation-actions";
 
 export type MessageItem = {
   id: string;

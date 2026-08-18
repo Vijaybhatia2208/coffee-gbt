@@ -32,6 +32,11 @@ export async function assertOwnsConversation(
   return conversation;
 }
 
+export async function getConversation(conversationId: string) {
+  const user = await requireUser();
+  return await assertOwnsConversation(conversationId, user.id);
+}
+
 export async function listConversation(): Promise<ConversationListItem[]> {
   try {
     const user = await requireUser();
