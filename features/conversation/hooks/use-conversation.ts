@@ -65,7 +65,7 @@ export function useUpdateConversation() {
   });
 }
 
-export function useDeletConversation(activeId?: string) {
+export function useDeleteConversation(activeId?: string) {
   const queryClient = useQueryClient();
   const router = useRouter();
 

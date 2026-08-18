@@ -1,11 +1,12 @@
-import { UserButton } from "@clerk/nextjs";
-import Image from "next/image";
+"use client ";
+import React from "react";
+import { startNewChat } from "@/features/home/actions/start-new-chat";
+import { redirect } from "next/navigation";
 
-export default function Home() {
-  return (
-    <div>
-      <h1>Hello world </h1>
-      <UserButton />
-    </div>
-  );
-}
+const page = async () => {
+  const conversationId = await startNewChat();
+
+  redirect(`/c/${conversationId}`);
+};
+
+export default page;

@@ -51,11 +51,11 @@ export default function RootLayout({
               enableSystem
               disableTransitionOnChange
             >
-              <div className="flex justify-end">
+              {/* <div className="flex justify-end">
                 <span>
                   <ModeToggle />
                 </span>
-              </div>
+              </div> */}
               {children}
             </ThemeProvider>
           </QueryProvider>

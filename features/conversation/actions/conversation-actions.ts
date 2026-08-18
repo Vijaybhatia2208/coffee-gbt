@@ -14,7 +14,10 @@ export type ConversationListItem = {
   updatedAt: Date;
 };
 
-async function assertOwnsConversation(conversationId: string, userId: string) {
+export async function assertOwnsConversation(
+  conversationId: string,
+  userId: string,
+) {
   const conversation = await prisma.conversation.findFirst({
     where: {
       id: conversationId,
@@ -27,6 +30,11 @@ async function assertOwnsConversation(conversationId: string, userId: string) {
   }
 
   return conversation;
+}
+
+export async function getConversation(conversationId: string) {
+  const user = await requireUser();
+  return await assertOwnsConversation(conversationId, user.id);
 }
 
 export async function listConversation(): Promise<ConversationListItem[]> {
